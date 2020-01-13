@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tripsearch</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Trip Search</h1>
+      <nav>
+        <% if @current_user.present? %>
+          Welcome, <%= @current_user.name %>(<%= link_to 'Log out', root_path, method: 'delete' %>)
+        <% else %>
+        <%= link_to 'Login', login_path %>
+        <% end %>
+        |
+        <%= link_to 'Sign in', new_user_path %>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>
