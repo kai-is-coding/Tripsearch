@@ -14,8 +14,9 @@
     <header>
       <h1>Trip Search</h1>
       <nav>
+        <%= link_to 'Home Page', root_path %>
         <% if @current_user.present? %>
-          Welcome, <%= @current_user.name %>
+          Welcome, <%= link_to @current_user.name, user_path(@current_user.id) %>
           <% if @current_user.admin? %>
           <strong>Admin User</strong>
           <% end %>

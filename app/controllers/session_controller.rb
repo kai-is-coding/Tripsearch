@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     # if email found and password is matched, give this user's id to session[:user_id]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_path(user.id)
+      redirect_to root_path
     # if user email or password does not match, show an error, and redirect_to to login page again
     else
       flash[:error] = "Incorrect email or password"

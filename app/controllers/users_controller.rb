@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     # if register successfully, jump to user show page
     if @user.persisted?
       session[:user_id] = @user.id
-      redirect_to user_path(@user.id)
+
+      # redirect_to user_path(@user.id)
     # if there is an error show the form again
     else
       render :new
