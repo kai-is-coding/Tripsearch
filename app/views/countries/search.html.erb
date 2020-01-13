@@ -1,0 +1,13 @@
+<h2>Search here</h2>
+  <% if flash[:alert] %>
+    <%= flash[:alert] %>
+  <% end %>
+  <%= form_with(url: countries_path, method: 'get', local: true) do%>
+    <div class="form-group">
+      <%= label_tag :country, 'Search for a country '%>
+      <%= text_field_tag :country, nil, placeholder: 'e.g. Australia',class: 'form-control' %>
+    </div>
+    <%= button_tag 'Search', class: 'btn btn-success btn-block' %>
+  <% end %>
+<hr>
+<img src="https://media.giphy.com/media/1yjqcGKmx63uoRLqlo/giphy.gif" alt="earth.gif"><hr>
