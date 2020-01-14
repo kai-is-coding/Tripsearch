@@ -1,0 +1,22 @@
+<h2>Details of <%= @city.name %></h2>
+
+<label>
+  <strong>Name:</strong>
+  <%= @city.name %>
+</label><br>
+
+<label>
+  <strong>Description:</strong>
+  <%= @city.description %>
+</label><br>
+
+<label>
+  <strong>Attractions:</strong>
+  <ul>
+    <% @city.attractions.each do |attraction| %>
+    <li>
+      <%= link_to attraction.name, attraction_path(attraction.id) %>
+    </li>
+    <% end %>
+  </ul>
+</label>

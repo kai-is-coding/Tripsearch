@@ -1,0 +1,9 @@
+<h2>List of Attractions</h2>
+<ul>
+  <% @attractions.each do |attraction| %>
+    <li>
+      <%= link_to attraction.name, attraction_path(attraction.id) %>
+    </li>
+
+  <% end %>
+</ul>

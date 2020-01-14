@@ -1,0 +1,16 @@
+<h4>Country info</h4>
+<dl>
+  <dt>Country</dt>
+  <dd><%= @country['name'] %></dd>
+  <dt>Capital</dt>
+  <dd><%= @country['capital'] %></dd>
+  <dt>Currency</dt>
+  <dd><%= @country['currencies'].join(', ') %></dd>
+  <dt>Timezone(s)</dt>
+  <dd><%= @country['timezones'].join(', ') %></dd>
+</dl>
+
+<%= form_tag countries_path, :method => 'post' do %>
+  <%= hidden_field_tag(:country, @country) %>
+  <%= submit_tag 'Save'%>
+<% end %>

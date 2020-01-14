@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_033924) do
+ActiveRecord::Schema.define(version: 2020_01_14_094735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attractions", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "city_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "country_id"
+  end
 
   create_table "countries", force: :cascade do |t|
     t.text "name"
@@ -21,6 +37,12 @@ ActiveRecord::Schema.define(version: 2020_01_13_033924) do
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+  end
+
+  create_table "countries_wishlists", force: :cascade do |t|
+    t.integer "country_id"
+    t.integer "wishlist_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,6 +52,18 @@ ActiveRecord::Schema.define(version: 2020_01_13_033924) do
     t.text "bio"
     t.text "password_digest"
     t.boolean "admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wishlists", force: :cascade do |t|
+    t.text "place1"
+    t.text "place2"
+    t.text "place3"
+    t.text "place4"
+    t.text "place5"
+    t.text "place6"
+    t.text "place7"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

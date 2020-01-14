@@ -28,6 +28,22 @@
         <%= link_to 'Sign in', new_user_path %>
       </nav>
     </header>
+
+    <h2>Search here</h2>
+      <% if flash[:alert] %>
+        <%= flash[:alert] %>
+      <% end %>
+
+      <%= form_with(url: countries_path , method: 'get', local: true) do%>
+        <div class="">
+          <strong>Search by:</strong>
+          <%= select_tag(:search_id, raw('<option value="1">Countries</option><option value="2">Cities</option><option value="3">Attractions</option>')) %>
+          <%= text_field_tag :search_id, nil, placeholder: 'e.g. Australia',class: '' %>
+        </div>
+        <%= button_tag 'Search', class: '' %>
+      <% end %>
+    <hr>
+
     <%= yield %>
   </body>
 </html>

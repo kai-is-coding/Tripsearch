@@ -1,11 +1,26 @@
-<h4>Country info</h4>
-<dl>
-  <dt>Country</dt>
-  <dd><%= @country['name'] %></dd>
-  <dt>Capital</dt>
-  <dd><%= @country['capital'] %></dd>
-  <dt>Currency</dt>
-  <dd><%= @country['currencies'].join(', ') %></dd>
-  <dt>Timezone(s)</dt>
-  <dd><%= @country['timezones'].join(', ') %></dd>
-</dl>
+<h2>Details of <%= @country.name %></h2>
+<%= form_tag wishlists_path, :method => 'post' do %>
+  <%= hidden_field_tag(:country, @country.name) %>
+  <%= submit_tag 'Save'%>
+<% end %>
+
+<label>
+  <strong>Name:</strong>
+  <%= @country.name %>
+</label><br>
+
+<label>
+  <strong>Description:</strong>
+  <%= @country.description %>
+</label><br>
+
+<label>
+  <strong>Cities:</strong>
+  <ul>
+    <% @country.cities.each do |e| %>
+    <li>
+      <%= link_to e.name, city_path(e.id) %>
+    </li>
+    <% end %>
+  </ul>
+</label>

@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
-# search country routes
-  root :to => 'countries#search'
 
-  get '/countries' => 'countries#show'
-
-  post '/countries' => 'countries#create'
-
+  # show home page
+  root :to => 'pages#home'
 
 
 # Login and Log out routes
@@ -18,4 +14,11 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :countries
+
+  resources :cities
+
+  resources :attractions
+
+  resources :wishlists
 end
