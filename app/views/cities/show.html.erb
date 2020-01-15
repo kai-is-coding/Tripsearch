@@ -1,22 +1,72 @@
+<style media="screen">
+  div.city_details {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+  }
+  h2, label {
+    display: block;
+  }
+  h2 {
+  position: relative;
+  top: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .city_images {
+    display: flex;
+    float: left;
+    width: 30vw;
+    height: 30vh;
+  }
+  #attraction, #attraction:visited {
+    text-decoration: none;
+    color: white;
+  }
+</style>
+
+<div class="city_details">
+
 <h2>Details of <%= @city.name %></h2>
 
-<label>
+
+<%= link_to 'Delete', city_path(@city.id), method: 'delete' , id: 'delete'%>
+
+
+<label id="name">
   <strong>Name:</strong>
   <%= @city.name %>
 </label><br>
 
-<label>
+<label id="description">
   <strong>Description:</strong>
   <%= @city.description %>
 </label><br>
 
-<label>
+<label id="attractions">
   <strong>Attractions:</strong>
   <ul>
     <% @city.attractions.each do |attraction| %>
     <li>
-      <%= link_to attraction.name, attraction_path(attraction.id) %>
+      <%= link_to attraction.name, attraction_path(attraction.id), id: 'attraction' %>
     </li>
     <% end %>
   </ul>
 </label>
+
+<div class="images">
+  <% @city.images.each do |image| %>
+
+  <%=image_tag image.image, alt: image.name, class: 'city_images'  %>
+
+  <% end %>
+</div>
+
+
+</div>

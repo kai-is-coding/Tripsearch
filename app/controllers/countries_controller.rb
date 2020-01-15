@@ -8,5 +8,8 @@ class CountriesController < ApplicationController
 
   end
 
+  def search
+    @countries = Country.find_by params[:search_id]
+  end
 
 end

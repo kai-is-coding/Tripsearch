@@ -1,8 +1,46 @@
-<h2>List of Countries:</h2>
-<ul>
-  <% @countries.each do |country| %>
-  <li>
-    <%= link_to country.name, country_path(country.id) %>
-  </li>
-  <% end %>
-</ul>
+<style media="screen">
+  div.countries_index {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+  }
+  ul {
+    list-style-type: none;
+  }
+  h2, ul {
+    display: block;
+  }
+  h2 {
+    position: relative;
+    top: 80px;
+    font-size: 45px;
+  }
+  ul {
+    position: relative;
+    top: 110px;
+    font-size: 20px;
+  }
+  li {
+    margin: 10px;
+
+  }
+  #country, #country:visited {
+    text-decoration: none;
+    color: white;
+  }
+</style>
+
+<div class="countries_index">
+
+  <h2>List of Countries:</h2>
+  <ul>
+    <% @countries.each do |country|   %>
+    <li>
+      <%= link_to country.name,   country_path(country.id), id: 'country' %>
+    </li>
+    <% end %>
+  </ul>
+</div>

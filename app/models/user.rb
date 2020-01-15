@@ -8,4 +8,5 @@ class User < ApplicationRecord
   # validates :admin, presence: true, uniqueness: true
 
   has_one :wishlist
+  has_one :image
 end

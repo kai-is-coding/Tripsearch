@@ -1,11 +1,49 @@
-<h2>Details of <%= @attraction.name %></h2>
+<style media="screen">
+  div.attraction_details {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+  }
+  h2, label {
+    display: block;
+  }
+  h2 {
+  position: relative;
+  top: 10px;
+  }
 
-<label>
-  <strong>Name:</strong>
-  <%= @attraction.name %>
-</label><br>
+  .attraction_images {
+    display: flex;
+    float: left;
+    width: 30vw;
+    height: 30vh;
+  }
+</style>
+<div class="attraction_details">
 
-<label>
-  <strong>Description:</strong>
-  <%= @attraction.description %>
-</label><br>
+  <h2>Details of <%= @attraction.name %></h2>
+
+  <%= link_to 'Delete', attraction_path(@attraction.id), method: 'delete' , id: 'delete'%>
+
+  <label id="name">
+    <strong>Name:</strong>
+    <%= @attraction.name %>
+  </label><br>
+
+  <label id="description">
+    <strong>Description:</strong>
+    <%= @attraction.description %>
+  </label><br>
+
+  <div class="images">
+    <% @attraction.images.each do |image| %>
+
+    <%=image_tag image.image, alt: image.name, class: 'attraction_images'  %>
+
+    <% end %>
+  </div>
+
+</div>

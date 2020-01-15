@@ -3,9 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div.search {
   text-align: center;
+  color: white;
   font-size: 30px;
-  width: 99%;
-  height: 86%;
+  width: 99.5%;
+  height: 88.7%;
   margin-top: 2px;
   position: absolute;
   // top: 260px;
@@ -22,4 +23,20 @@ div.searchArea {
   position: relative;
   top: 200px;
   margin: 0px auto;
+}
+.searchSelection {
+  height: 35px;
+}
+
+.searchBar {
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+
+}
+
+.searchButtom {
+  height: 35px;
+  width: 60px;
+  border-radius: 5px;
 }

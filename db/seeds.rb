@@ -2,11 +2,11 @@ User.destroy_all
 
 puts "Creating users...."
 
-u1 = User.create! name: 'John', email: 'john@ga.co', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Kittyply_edit1.jpg/1024px-Kittyply_edit1.jpg', bio: 'I love Traveling', password: 'chicken', admin: true
+u1 = User.create! name: 'John', email: 'john@ga.co', bio: 'I love Traveling', password: 'chicken', admin: true
 
-u2 = User.create! name: 'Mikaela', email: 'mikaela@ga.co', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Felis_silvestris_catus_lying_on_rice_straw.jpg/1024px-Felis_silvestris_catus_lying_on_rice_straw.jpg', bio: 'Travel the world!', password: 'chicken', admin: false
+u2 = User.create! name: 'Mikaela', email: 'mikaela@ga.co', bio: 'Travel the world!', password: 'chicken', admin: false
 
-u3 = User.create! name: 'Nookie', email: 'nookie@ga.co', image: 'https://upload.wikimedia.org/wikipedia/commons/6/6d/Listen%2C_do_you_want_to_know_a_secret.jpg', bio: 'Enjoy the nature.', password: 'chicken', admin: false
+u3 = User.create! name: 'Nookie', email: 'nookie@ga.co', bio: 'Enjoy the nature.', password: 'chicken', admin: false
 
 puts "Created #{User.count} users."
 
@@ -79,3 +79,51 @@ ct3.attractions << a5 << a6
 ct4.attractions << a7 << a8
 ct5.attractions << a9 << a10
 ct6.attractions << a11 << a12
+
+Image.destroy_all
+
+puts "Creating images..."
+i1 = Image.create! name: 'Fraumünster Church', image: 'https://media.gettyimages.com/photos/fraumunster-church-in-zurich-picture-id997499256', attraction_id: a2.id
+i2 = Image.create! name: 'Fraumünster Church', image: 'https://st2.depositphotos.com/3049830/11973/i/950/depositphotos_119735432-stock-photo-fraumunster-church-and-limmat-river.jpg', attraction_id: a2.id
+i3 = Image.create! name: 'Grossmünster', image: 'https://media.gettyimages.com/photos/grossmunster-cathedral-zurich-picture-id629863809?s=2048x2048', attraction_id: a1.id
+i4 = Image.create! name: 'Grossmünster', image: 'https://media.gettyimages.com/photos/beautiful-view-of-grossmnster-church-from-across-the-limmat-river-in-picture-id936336820?k=6&m=936336820&s=612x612&w=0&h=O4hmtW3KSgGfzePF7CyofHe45yw0BQJN4WAnj4snPbQ=', attraction_id: a1.id
+i5 = Image.create! name: 'The Geneva Water Fountain', image: 'https://media.gettyimages.com/photos/lake-geneva-from-above-geneva-switzerland-picture-id656399578?s=2048x2048', attraction_id: a3.id
+i6 = Image.create! name: 'The Geneva Water Fountain', image: 'https://media.gettyimages.com/photos/aerial-view-of-geneva-city-at-sunset-picture-id1056784936?k=6&m=1056784936&s=612x612&w=0&h=gj6Y9Hc5jd8xVAXYddRxr05OhdMe94Vk5EVJEr3TVB4=', attraction_id: a3.id
+i7 = Image.create! name: 'St Pierre Cathedral', image: 'https://media.gettyimages.com/photos/st-pierre-cathedral-geneva-picture-id170618690?s=2048x2048', attraction_id: a4.id
+i8 = Image.create! name: 'St Pierre Cathedral', image: 'https://media.gettyimages.com/photos/rennes-cathedral-france-picture-id641628048?k=6&m=641628048&s=612x612&w=0&h=uryYOFverghsOYXhgAbyhhsshfGIy5sNRjApedlMTeE=', attraction_id: a4.id
+i9 = Image.create! name: 'The Imperial Palace', image: 'https://media.gettyimages.com/photos/elegant-watchtower-picture-id543202862?k=6&m=543202862&s=612x612&w=0&h=rnOj6c6r_mPf9935NXwn9TJaJCwsZsxNLNLt-VUA-Ug=', attraction_id: a5.id
+i10 = Image.create! name: 'The Imperial Palace', image: 'https://media.gettyimages.com/photos/japanese-imperial-architecture-tokyo-japan-picture-id504905234?k=6&m=504905234&s=612x612&w=0&h=XuwLb1g5OHwsodC2MlwpAA4nsJ3x2M5kHJ2IOpkdUkE=', attraction_id: a5.id
+i11 = Image.create! name: 'National Museum of Nature and Science', image: 'https://media.gettyimages.com/photos/the-national-museum-of-nature-and-science-in-ueno-park-exhibits-and-picture-id498158252?s=2048x2048', attraction_id: a6.id
+i12 = Image.create! name: 'National Museum of Nature and Science', image: 'https://media.gettyimages.com/photos/parent-and-child-of-mapusaurus-roseae-are-displayed-during-the-of-picture-id85410754?k=6&m=85410754&s=612x612&w=0&h=odrei5HLHNjQoYWJS7CVoM2LnWEg3EM1RgNOwZFXKUA=', attraction_id: a6.id
+i13 = Image.create! name: 'Osaka Castle', image: 'https://media.gettyimages.com/photos/in-this-aerial-image-osaka-castle-where-hosts-events-of-the-g20-is-picture-id1158506158?k=6&m=1158506158&s=612x612&w=0&h=MN44aXbwWh9sFxLnbR0dO7MlOaArreh-4z61bqBc32M=', attraction_id: a7.id
+i14 = Image.create! name: 'Osaka Castle', image: 'https://media.gettyimages.com/photos/view-of-osaka-castle-on-december-10-2016-in-osaka-japan-picture-id628851394?k=6&m=628851394&s=612x612&w=0&h=82m9WJc9VhsztfnjLiT_Ug9e2I_6duydGLdpqxBFzgg=', attraction_id: a7.id
+i15 = Image.create! name: 'Universal Studios Japan', image: 'https://media.gettyimages.com/photos/model-of-the-universal-studios-logo-is-displayed-at-the-entrance-to-picture-id453499510?s=2048x2048', attraction_id: a8.id
+i16 = Image.create! name: 'Universal Studios Japan', image: 'https://media.gettyimages.com/photos/visitors-walk-in-front-of-the-wizarding-world-of-harry-potter-themed-picture-id453499472?k=6&m=453499472&s=612x612&w=0&h=piT2C6Qosn2DnexjGywxhEdvx56-Re7wsIzIWKLI4O0=', attraction_id: a8.id
+i17 = Image.create! name: 'CN Tower', image: 'https://media.gettyimages.com/photos/yachting-on-lake-ontario-in-toronto-ontario-canada-with-the-cn-tower-picture-id513696613?s=2048x2048', attraction_id: a9.id
+i18 = Image.create! name: 'CN Tower', image: 'https://media.gettyimages.com/photos/tower-seen-at-twilight-with-a-bright-full-moon-in-the-sky-picture-id478245950?k=6&m=478245950&s=612x612&w=0&h=nEKr8j1fsDqyAsUvTTMhK7f4__BDdfbRtY3i9T1QRyI=', attraction_id: a9.id
+i19 = Image.create! name: 'Casa Loma', image: 'https://media.gettyimages.com/photos/the-casa-loma-a-gothic-revival-house-in-toronto-ontario-canada-circa-picture-id159337490?s=2048x2048', attraction_id: a10.id
+i20 = Image.create! name: 'Casa Loma', image: 'https://media.gettyimages.com/photos/the-casa-loma-a-gothic-revival-house-in-toronto-ontario-canada-1967-picture-id513696611?s=2048x2048', attraction_id: a10.id
+i21 = Image.create! name: 'Mount Royal', image: 'https://media.gettyimages.com/photos/montral-qubec-canada-january-4-2016-childrens-are-playing-in-hte-snow-picture-id543793048?s=2048x2048', attraction_id: a11.id
+i22 = Image.create! name: 'Mount Royal', image: 'https://media.gettyimages.com/photos/montral-qubec-canada-january-4-2016-montreal-is-seen-from-mount-royal-picture-id543793072?s=2048x2048', attraction_id: a11.id
+i23 = Image.create! name: 'Notre-Dame Basilica of Montreal', image: 'https://media.gettyimages.com/photos/notredame-basilica-church-skylights-in-the-ceiling-the-multicolour-picture-id825856882?s=2048x2048', attraction_id: a12.id
+i24 = Image.create! name: 'Notre-Dame Basilica of Montreal', image: 'https://media.gettyimages.com/photos/framed-by-eleborate-sanctuary-church-goers-attend-a-service-in-notre-picture-id152461368?s=2048x2048', attraction_id: a12.id
+i25 = Image.create! name: 'Geneva', image: 'https://t4.ftcdn.net/jpg/01/69/35/49/240_F_169354926_Co6lflkuyQtaL6CiMc45X9b9rH67GQfJ.jpg', city_id: ct2.id
+i26 = Image.create! name: 'Geneva', image: 'https://t3.ftcdn.net/jpg/01/75/45/32/240_F_175453299_gzD3co2XMQddr1qeGlI7Eoj80mV3ACMg.jpg', city_id: ct2.id
+i27 = Image.create! name: 'Tokyo City', image: 'https://images.pexels.com/photos/2506923/pexels-photo-2506923.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct3.id
+i28 = Image.create! name: 'Tokyo City', image: 'https://images.pexels.com/photos/2614818/pexels-photo-2614818.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct3.id
+i29 = Image.create! name: 'Osaka', image: 'https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct4.id
+i30 = Image.create! name: 'Osaka', image: 'https://images.pexels.com/photos/1798631/pexels-photo-1798631.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct4.id
+i31 = Image.create! name: 'Toronto', image: 'https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct5.id
+i32 = Image.create! name: 'Toronto', image: 'https://images.pexels.com/photos/1750754/pexels-photo-1750754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct5.id
+i33 = Image.create! name: 'Montreal', image: 'https://images.pexels.com/photos/2889701/pexels-photo-2889701.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct6.id
+i34 = Image.create! name: 'Montreal', image: 'https://images.pexels.com/photos/1159708/pexels-photo-1159708.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct6.id
+i35 = Image.create! name: 'Zürich', image: 'https://as1.ftcdn.net/jpg/01/85/10/72/500_F_185107235_1myJcez1PSCquoSHUkHpsIa8KjM5QFuI.jpg', city_id: ct1.id
+i36 = Image.create! name: 'Zürich', image: 'https://as1.ftcdn.net/jpg/02/18/59/06/500_F_218590606_tYNxh3BM1bL02D196jGHOq2j8N0Pt0Vd.jpg', city_id: ct1.id
+i1 = Image.create! name: 'Switzerland', image: 'https://images.pexels.com/photos/922978/pexels-photo-922978.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c1.id
+i1 = Image.create! name: 'Switzerland', image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c1.id
+i1 = Image.create! name: 'Japan', image: 'https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c2.id
+i1 = Image.create! name: 'Japan', image: 'https://images.pexels.com/photos/46253/mt-fuji-sea-of-clouds-sunrise-46253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c2.id
+i1 = Image.create! name: 'Canada', image: 'https://images.pexels.com/photos/756790/pexels-photo-756790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c3.id
+i1 = Image.create! name: 'Canada', image: 'https://images.pexels.com/photos/158398/niagara-falls-waterfall-horseshoe-158398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c3.id
+
+puts "Created #{Image.count} images."

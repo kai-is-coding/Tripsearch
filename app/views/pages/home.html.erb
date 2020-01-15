@@ -1,12 +1,12 @@
 <div class="search">
 
-  <h2>Search here</h2>
-    <%= form_with(url: countries_path ,   method: 'get', local: true) do %>
+  <h2>Search Your Destinations</h2>
+    <%= form_with(url: countries_search_path, method: 'get', local: true, id: 'search_form') do %>
       <div class="searchArea">
         <strong>Search by:</strong>
-        <%= select_tag(:search_id,   raw('<option value="1">Countries</  option><option value="2">Cities</  option><option   value="3">Attractions</option>')) %>
-        <%= text_field_tag :search_id, nil,   placeholder: 'e.g.   Australia',class: '' %>
-      <%= button_tag 'Search', class: '' %>
+        <%= select_tag(:search_id,   raw('<option value="1">Countries</  option><option value="2">Cities</  option><option   value="3">Attractions</option>'), class: 'searchSelection') %>
+        <%= text_field_tag :search_id, nil,   placeholder: 'e.g.   Australia',class: 'searchBar' %>
+      <%= button_tag 'Search', class: 'searchButtom' %>
     </div>
     <% end %>
 </div>

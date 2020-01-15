@@ -1,3 +1,38 @@
+<style media="screen">
+  div.country_details {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+  }
+  h2, label {
+    display: block;
+  }
+  h2 {
+  position: relative;
+  top: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .country_images {
+    display: flex;
+    float: left;
+    width: 30vw;
+    height: 30vh;
+  }
+  #attraction, #attraction:visited, #city, #city:visited {
+    text-decoration: none;
+    color: white;
+  }
+</style>
+
+<div class="country_details">
+
 <h2>Details of <%= @country.name %></h2>
 <%= form_tag add_wishlist_country_path(@country.id) do %>
   <%= submit_tag 'Save to Wishlist'%>
@@ -8,36 +43,45 @@
   </div>
 <% end %>
 
-<label>
+<label id="name">
   <strong>Name:</strong>
   <%= @country.name %>
 </label><br>
 
-<label>
+<label id="description">
   <strong>Description:</strong>
   <%= @country.description %>
 </label><br>
 
-<label>
+<label id="cities">
   <strong>Cities:</strong>
   <ul>
     <% @country.cities.each do |e| %>
     <li>
-      <%= link_to e.name, city_path(e.id) %>
+      <%= link_to e.name, city_path(e.id), id: 'city' %>
     </li>
     <% end %>
   </ul>
 </label><br>
 
-<label>
+<label id="attractions">
   <strong>Attractions:</strong>
   <ul>
     <% @country.cities.each do |city| %>
       <% city.attractions.each do |attraction| %>
         <li>
-          <%= link_to attraction.name,     attraction_path(attraction.id) %>
+          <%= link_to attraction.name,     attraction_path(attraction.id), id: 'attraction' %>
         </li>
       <% end %>
     <% end %>
   </ul>
 </label>
+
+<div class="images">
+  <% @country.images.each do |image| %>
+
+  <%=image_tag image.image, alt: image.name, class: 'country_images'  %>
+
+  <% end %>
+</div>
+</div>
