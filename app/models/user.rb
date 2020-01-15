@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true
   # validates :admin, presence: true, uniqueness: true
+
+  has_one :wishlist
 end

@@ -1,7 +1,11 @@
 <h2>Details of <%= @country.name %></h2>
-<%= form_tag wishlists_path, :method => 'post' do %>
-  <%= hidden_field_tag(:country, @country.name) %>
-  <%= submit_tag 'Save'%>
+<%= form_tag add_wishlist_country_path(@country.id) do %>
+  <%= submit_tag 'Save to Wishlist'%>
+<% end %>
+<% if flash[:notice] %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
 <% end %>
 
 <label>
@@ -21,6 +25,19 @@
     <li>
       <%= link_to e.name, city_path(e.id) %>
     </li>
+    <% end %>
+  </ul>
+</label><br>
+
+<label>
+  <strong>Attractions:</strong>
+  <ul>
+    <% @country.cities.each do |city| %>
+      <% city.attractions.each do |attraction| %>
+        <li>
+          <%= link_to attraction.name,     attraction_path(attraction.id) %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </label>

@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   resources :attractions
 
   resources :wishlists
+  
+  post '/wishlist/add_country/:id' => 'wishlists#add_country', as: 'add_wishlist_country'
+
 end

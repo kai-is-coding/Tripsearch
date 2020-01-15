@@ -8,28 +8,33 @@
 |
 <%= link_to 'Delete your account', user_path(@user.id), method: 'delete' %><br>
 <label>
-  Name:
+  <strong>Name:</strong>
   <%= @user.name %>
 </label><br>
 
 <label>
-  Email:
+  <strong>Email:</strong>
   <%= @user.email %>
 </label><br>
 
 <% if @user.image.present? %>
 <label>
-  Image:
+  <strong>Image:</strong>
   <%= image_tag @user.image, alt: @user.name, class: 'user' %>
 </label><br>
 <% end %>
 
 <label>
-  Bio:
+  <strong>Bio:</strong>
   <%= @user.bio %>
 </label><br>
 
 <label>
-  Admin:
+  <strong>Admin:</strong>
   <%= @user.admin %>
 </label><br>
+
+<label>
+  <strong>Wistlist:</strong>
+  <%= link_to @user.wishlist.name, wishlist_path(@user.wishlist.id) %>
+</label>

@@ -1,2 +1,9 @@
-<h1>Wishlists#show</h1>
-<p>Find me in app/views/wishlists/show.html.erb</p>
+<h1>Wishlists</h1>
+<ul>
+  <% @wishlist.countries.each do |country| %>
+    <li>
+      <%= link_to country.name, country_path(country.id) %>
+    </li>
+  <% end %>
+
+</ul>

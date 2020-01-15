@@ -11,6 +11,22 @@ u3 = User.create! name: 'Nookie', email: 'nookie@ga.co', image: 'https://upload.
 puts "Created #{User.count} users."
 
 
+Wishlist.destroy_all
+
+puts "Creating Wishlist..."
+
+w1 = Wishlist.create! name: 'Wishlist1', user_id: u1.id
+w2 = Wishlist.create! name: 'Wishlist2', user_id: u2.id
+w3 = Wishlist.create! name: 'Wishlist3', user_id: u3.id
+
+# User -> Wishlist associations
+# u1.wishlist << w1
+# u2.wishlist << w2
+# u3.wishlist << w3
+
+puts "Created #{Wishlist.count} wishlists."
+
+
 Country.destroy_all
 
 puts 'Creating countries..'
@@ -18,7 +34,10 @@ c1 = Country.create! name: 'Switzerland', description: 'Each year it has made th
 c2 = Country.create! name: 'Japan', description: 'Japan rose from the fifth spot on last year’s list to the second spot on 2019′s ranking. According to the U.S. News & World Report’s survey results, the country is seen by respondents as one of the most forward looking countries. It also ranks first for entrepreneurship, according to this year’s data.'
 c3 = Country.create! name: 'Canada', description: 'Germany, one of the top five overall countries, also broke the top five spots on specialized lists for education, entrepreneurship, power and influence.'
 
+
 puts "Created #{Country.count} countries."
+
+
 
 City.destroy_all
 

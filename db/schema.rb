@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_094735) do
+ActiveRecord::Schema.define(version: 2020_01_14_235252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,15 +57,9 @@ ActiveRecord::Schema.define(version: 2020_01_14_094735) do
   end
 
   create_table "wishlists", force: :cascade do |t|
-    t.text "place1"
-    t.text "place2"
-    t.text "place3"
-    t.text "place4"
-    t.text "place5"
-    t.text "place6"
-    t.text "place7"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "name"
+    t.integer "country_id"
+    t.integer "user_id"
   end
 
 end

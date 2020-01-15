@@ -1,2 +1,12 @@
+<div class="search">
 
-<img src="https://media.giphy.com/media/1yjqcGKmx63uoRLqlo/giphy.gif" alt="earth.gif"><hr>
+  <h2>Search here</h2>
+    <%= form_with(url: countries_path ,   method: 'get', local: true) do %>
+      <div class="searchArea">
+        <strong>Search by:</strong>
+        <%= select_tag(:search_id,   raw('<option value="1">Countries</  option><option value="2">Cities</  option><option   value="3">Attractions</option>')) %>
+        <%= text_field_tag :search_id, nil,   placeholder: 'e.g.   Australia',class: '' %>
+      <%= button_tag 'Search', class: '' %>
+    </div>
+    <% end %>
+</div>

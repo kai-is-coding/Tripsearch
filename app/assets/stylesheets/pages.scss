@@ -1,3 +1,25 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+div.search {
+  text-align: center;
+  font-size: 30px;
+  width: 99%;
+  height: 86%;
+  margin-top: 2px;
+  position: absolute;
+  // top: 260px;
+  // margin: auto 295px;
+  background-image: url("background.jpeg");
+  background-size: cover;
+}
+h2 {
+  position: relative;
+  top: 230px;
+}
+div.searchArea {
+  width: max-content;
+  position: relative;
+  top: 200px;
+  margin: 0px auto;
+}
