@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_114805) do
+ActiveRecord::Schema.define(version: 2020_01_16_052550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,22 @@ ActiveRecord::Schema.define(version: 2020_01_15_114805) do
     t.float "longitude"
   end
 
+  create_table "attractions_wishlists", force: :cascade do |t|
+    t.integer "attraction_id"
+    t.integer "wishlist_id"
+  end
+
   create_table "cities", force: :cascade do |t|
     t.text "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "country_id"
+  end
+
+  create_table "cities_wishlists", force: :cascade do |t|
+    t.integer "city_id"
+    t.integer "wishlist_id"
   end
 
   create_table "countries", force: :cascade do |t|

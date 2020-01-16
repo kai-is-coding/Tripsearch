@@ -1,5 +1,5 @@
 <style media="screen">
-  div.edit {
+  div.create_new {
     width: 99.5%;
     height: 88.7%;
     margin-top: 2px;
@@ -20,15 +20,15 @@
     font-size: 25px;
   }
 </style>
-<div class="edit">
+<div class="create_new">
 
-  <h2>Edit City.</h2>
+  <h2>Create a new Attraction.</h2>
   <div class="form">
 
 
 
     <%# form for creating new users %>
-    <%= form_for @city do |f| %>
+    <%= form_for @attraction do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
       <br>
@@ -37,11 +37,11 @@
       <%= f.text_field :description %>
       <br>
 
-      <%# <%= form_tag add_image_country_path(@city.id) do %>
+      <%# <%= form_tag add_image_country_path(@attraction.id) do %>
       <%# <%= f.label :image %>
       <%# <%= f.text_field :image %>
       <%# <% end %>
-      <%= f.submit 'Update' %>
+      <%= f.submit 'Create' %>
     <% end %>
 
   </div>

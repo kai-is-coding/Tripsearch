@@ -12,7 +12,10 @@
     position: relative;
     top: 10vh;
     font-size: 35px;
-
+  }
+  ul {
+      list-style-type: none;
+  }
   #update {
     font-size: 16px;
     position: relative;
@@ -51,10 +54,10 @@
       <%= f.email_field :email %>
       <br>
 
-      <%= form_tag add_image_user_path(@user.id) do %>
-      <%= f.label :image %>
-      <%= f.text_field :image %>
-      <% end %>
+      <%# <%= form_tag add_image_user_path(@user.id) do %>
+      <%# <%= f.label :image %>
+      <%# <%= f.text_field :image %>
+      <%# <% end %>
 
       <%= f.label :bio %>
       <%= f.text_field :bio %>

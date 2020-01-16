@@ -2,6 +2,8 @@ class Attraction < ApplicationRecord
   belongs_to :city, optional: true
 
   has_many :images
+  has_and_belongs_to_many :wishlists
+  
 
   # Tell geocoder where to look to get the human-readable address string, which it will use to work out the lat/long coordinates
   geocoded_by :address

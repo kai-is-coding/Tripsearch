@@ -1,9 +1,43 @@
+<style media="screen">
+  div.wishlist {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+  }
+ ul {
+     list-style-type: none;
+ }
+  #country, #country:visited, #city, #city:visited, #attraction, #attraction:visited {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    position: relative;
+  }
+</style>
+<div class="wishlist">
+
 <h1>Wishlists</h1>
 <ul>
   <% @wishlist.countries.each do |country| %>
     <li>
-      <%= link_to country.name, country_path(country.id) %>
+      <%= link_to country.name, country_path(country.id), id: 'country' %>
+    </li>
+  <% end %>
+
+  <% @wishlist.cities.each do |city| %>
+    <li>
+      <%= link_to city.name, city_path(city.id), id: 'city' %>
+    </li>
+  <% end %>
+
+  <% @wishlist.attractions.each do |attraction| %>
+    <li>
+      <%= link_to attraction.name, attraction_path(attraction.id), id: 'attraction' %>
     </li>
   <% end %>
 
 </ul>
+</div>

@@ -19,12 +19,7 @@
     list-style-type: none;
   }
 
-  .city_images {
-    display: flex;
-    float: left;
-    width: 30vw;
-    height: 30vh;
-  }
+
   #attraction, #attraction:visited {
     text-decoration: none;
     color: white;
@@ -74,7 +69,7 @@
 <div class="images">
   <% @city.images.each do |image| %>
 
-  <%=image_tag image.image, alt: image.name, class: 'city_images'  %>
+  <%=image_tag image.image, alt: image.name, id: 'images' %>
 
   <% end %>
 </div>

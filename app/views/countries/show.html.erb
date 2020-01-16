@@ -19,12 +19,14 @@
     list-style-type: none;
   }
 
-  .country_images {
+  div.external_links {
     display: flex;
-    float: left;
-    width: 30vw;
-    height: 30vh;
   }
+  #attractions, #cities {
+    width: 50%;
+  }
+
+
   #attraction, #attraction:visited, #city, #city:visited {
     text-decoration: none;
     color: white;
@@ -60,6 +62,7 @@
   <strong>Description:</strong>
   <%= @country.description %>
 </label><br>
+<div class="external_links">
 
 <label id="cities">
   <strong>Cities:</strong>
@@ -84,11 +87,12 @@
     <% end %>
   </ul>
 </label>
+</div>
 
 <div class="images">
   <% @country.images.each do |image| %>
 
-  <%=image_tag image.image, alt: image.name, class: 'country_images'  %>
+  <%=image_tag image.image, alt: image.name,  id: 'images' %>
 
   <% end %>
 </div>

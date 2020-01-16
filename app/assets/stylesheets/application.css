@@ -48,6 +48,14 @@ div.yield {
   height: auto;
 }
 
+#images {
+  display: flex;
+  float: left;
+  width: auto;
+  height: 30vh;
+  margin: 10px;
+
+}
 
 footer {
   position: absolute;

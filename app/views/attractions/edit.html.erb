@@ -22,13 +22,13 @@
 </style>
 <div class="edit">
 
-  <h2>Edit City.</h2>
+  <h2>Edit Attraction.</h2>
   <div class="form">
 
 
 
     <%# form for creating new users %>
-    <%= form_for @city do |f| %>
+    <%= form_for @attraction do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
       <br>
@@ -37,7 +37,7 @@
       <%= f.text_field :description %>
       <br>
 
-      <%# <%= form_tag add_image_country_path(@city.id) do %>
+      <%# <%= form_tag add_image_attraction_path(@aattraction.id) do %>
       <%# <%= f.label :image %>
       <%# <%= f.text_field :image %>
       <%# <% end %>

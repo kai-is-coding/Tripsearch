@@ -81,10 +81,12 @@
       <%= @user.bio %>
     </label><br>
 
+    <% if @user.admin.present? %>
     <label>
       <strong>Admin:</strong>
       <%= @user.admin %>
     </label><br>
+    <% end %>
 
     <label>
       <% if @user.wishlist.present? %>
