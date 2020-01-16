@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # show home page
   root :to => 'pages#home'
 
-  get '/attractions/map' => 'attractions#map'
 
 
 # Login and Log out routes
@@ -16,8 +15,16 @@ Rails.application.routes.draw do
 
   # searches
   get '/countries/search' => 'countries#search'
+  # add a map into country search page
+  get '/countries/search' => 'countries#search'
+
   get '/cities/search' => 'cities#search'
+  # add a map into city search page
+  get '/cities/search' => 'cities#search'
+
   get '/attractions/search' => 'attractions#search'
+  # add a map into attraction search page
+  get '/attractions/search' => 'attractions#map'
 
   resources :users
 

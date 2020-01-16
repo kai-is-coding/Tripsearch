@@ -35,12 +35,13 @@ class CountriesController < ApplicationController
     redirect_to countries_path
   end
 
+  def map
+    @countries = Country.where.not(latitude:nil ,longitude:nil).select(:latitude, :longitude, :name)
+  end
+
   def search
     @countries = Country.where('name ILIKE ?', "%#{params[:search_text]}%")
 
-    @countries.each do |c|
-      puts c.name
-    end
 
   end
 

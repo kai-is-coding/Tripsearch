@@ -1,11 +1,89 @@
-<p>
+<style media="screen">
+  div.search_attraction {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+    display: flex;
+  }
+  div.result, div#map {
+    width: 50%;
+  }
+
+  ul {
+    list-style-type: none;
+    position: relative;
+    top: 20vh;
+    left: 5vw;
+  }
+
+  #attraction_link, #attraction_link:visited {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    position: relative;
+    left: -10vw;
+  }
+
+  #map {
+    height: 57vh;
+    width: 90vw;
+    position: relative;
+    top: 15vh;
+    right: 4vw;
+  }
+  /* html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    } */
+
+</style>
+<div class="search_attraction">
+<div class="result">
+
   <ul>
   <% @attractions.each do |attraction| %>
     <li>
-      <%= link_to attraction.name, attraction_path(attraction.id) %>
+      <%= link_to attraction.name, attraction_path(attraction.id), id:'attraction_link' %>
     </li>
   <% end %>
 </ul>
+</div>
+
+<div id="map"></div>
+<script>
+    const attractions = <%= @attractions.to_json.html_safe %>
+     function initMap() {
+       var myLatLng = {lat: -25.363, lng: 131.044};
 
 
-</p>
+      var bounds = new google.maps.LatLngBounds();
+
+       var map = new google.maps.Map(document.getElementById('map'), {
+         // zoom: 15,
+         // center: {lat: attractions[0].latitude, lng: attractions[0].longitude}
+       });
+
+      for(let i = 0; i < attractions.length; i ++){
+        const attraction = attractions[i];//get current item
+
+       var marker = new google.maps.Marker({
+         position: {lat: attraction.latitude, lng: attraction.longitude},
+         map: map,
+         title: attraction.name
+       });
+       // add the lastest marker to the bounding box
+       bounds.extend(marker.position);
+     } // for
+     // make the map fit within the box
+     map.fitBounds( bounds );
+
+   } // initMap
+   </script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2ai0xcVHX45ezIGP-E-wXg3ZKlZyzP5s&callback=initMap">
+</script>
+</div>

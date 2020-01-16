@@ -34,6 +34,10 @@ class CitiesController < ApplicationController
     redirect_to cities_path
   end
 
+  def map
+    @cities = City.where.not(latitude:nil, longitude:nil).select(:latitude, :longitude, :name)
+  end
+
   def search
     @cities = City.where('name ILIKE ?', "%#{params[:search_text]}%")
   end

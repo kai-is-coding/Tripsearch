@@ -1,13 +1,83 @@
-__ <%= @countries.any? && @countries.length %> __
+<style media="screen">
+  div.search_country {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+    display: flex;
+  }
 
-<p>
+  div.result, div#map {
+    width: 50%;
+  }
+  ul {
+    list-style-type: none;
+    position: relative;
+    top: 20vh;
+    left: 5vw;
+  }
+
+  #country_link, #country_link:visited {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    position: relative;
+    left: -10vw;
+  }
+
+    #map {
+      height: 57vh;
+      width: 90vw;
+      position: relative;
+      top: 15vh;
+      right: 4vw;
+    }
+
+</style>
+<div class="search_country">
+  <div class="result">
   <ul>
   <% @countries.each do |country| %>
     <li>
-      <%= link_to country.name, country_path(country.id) %>
+      <%= link_to country.name, country_path(country.id), id: 'country_link' %>
     </li>
   <% end %>
 </ul>
+</div>
+
+<div id="map"></div>
+<script>
+    const countries = <%= @countries.to_json.html_safe %>
+     function initMap() {
+       var myLatLng = {lat: -25.363, lng: 131.044};
 
 
-</p>
+      var bounds = new google.maps.LatLngBounds();
+
+       var map = new google.maps.Map(document.getElementById('map'), {
+         // zoom: 15,
+         // center: {lat: countries[0].latitude, lng: countries[0].longitude}
+       });
+
+      for(let i = 0; i < countries.length; i ++){
+        const country = countries[i];//get current item
+
+       var marker = new google.maps.Marker({
+         position: {lat: country.latitude, lng: country.longitude},
+         map: map,
+         title: country.name
+       });
+       // add the lastest marker to the bounding box
+       bounds.extend(marker.position);
+     } // for
+     // make the map fit within the box
+     map.fitBounds( bounds );
+
+   } // initMap
+   </script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2ai0xcVHX45ezIGP-E-wXg3ZKlZyzP5s&callback=initMap">
+</script>
+</div>
