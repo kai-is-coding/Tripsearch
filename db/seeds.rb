@@ -37,7 +37,7 @@ c4 = Country.create! name: 'Australia', description: '', address: 'Australia', l
 c5 = Country.create! name: 'Austria', description: '', address: 'Austria', latitude: 47.516231, longitude: 14.550072
 c6 = Country.create! name: 'United Kingdom', description: '', address: 'United Kingdom', latitude: 55.378051, longitude: 3.435973
 c7 = Country.create! name: 'United States', description: '', address: 'United States', latitude: 37.09024, longitude: 95.712891
-c8 = Country.create! name: 'China', description: '', address: '', latitude: 35.86166, longitude: 104.195397
+c8 = Country.create! name: 'China', description: '', address: 'China', latitude: 35.86166, longitude: 104.195397
 c9 = Country.create! name: 'New Zealand', description: '', address: 'New Zealand', latitude:  -40.900557, longitude: 174.885971
 c10 = Country.create! name: ' Norway', description: '', address: ' Norway', latitude: 60.472024, longitude: 8.468946
 
@@ -183,4 +183,5 @@ i62 = Image.create! name: 'Vienna', image: 'https://images.pexels.com/photos/910
 i63 = Image.create! name: 'Graz', image: 'https://images.pexels.com/photos/2397304/pexels-photo-2397304.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct18.id
 i64 = Image.create! name: 'Sydney', image: 'https://images.pexels.com/photos/1878293/pexels-photo-1878293.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct19.id
 i65 = Image.create! name: 'Melbourne', image: 'https://images.pexels.com/photos/1656584/pexels-photo-1656584.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct20.id
+
 puts "Created #{Image.count} images."
