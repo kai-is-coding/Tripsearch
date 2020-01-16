@@ -1,1 +1,12 @@
 hello cities
+<p>
+  <ul>
+  <% @cities.each do |city| %>
+    <li>
+      <%= link_to city.name, city_path(city.id) %>
+    </li>
+  <% end %>
+</ul>
+
+
+</p>

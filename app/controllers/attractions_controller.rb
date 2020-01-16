@@ -1,4 +1,7 @@
 class AttractionsController < ApplicationController
+  before_action :check_if_logged_in, only: [:index, :show, :search]
+  before_action :check_if_it_is_admin
+  
   def index
     @attractions = Attraction.all
   end
@@ -18,6 +21,6 @@ class AttractionsController < ApplicationController
   end
 
   def search
-
+    @attractions = Attraction.where('name ILIKE ?', "%#{params[:search_text]}%")
   end
 end

@@ -1,40 +1,96 @@
-<h2>Details of users</h2>
-<% if @current_user.present? && @current_user.admin? %>
-  <%= link_to 'A list of all users', users_path %>
-<% end %>
-<br>
+<style media="screen">
+  div.user_detail {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+  }
 
-<%= link_to 'Change Profile', edit_user_path(@user.id) %>
-|
-<%= link_to 'Delete your account', user_path(@user.id), method: 'delete' %><br>
-<label>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</label><br>
+  h2, div.user_links, div.labels{
+    position: relative;
+    top: 5vh;
+  }
 
-<label>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</label><br>
+  div.user_links{
+    position: relative;
+    top: 5vh;
+  }
 
-<% if @user.image.present? %>
-<label>
-  <strong>Image:</strong>
-  <%= image_tag @user.image, alt: @user.name, class: 'user' %>
-</label><br>
-<% end %>
+  .links, .links:visited {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
 
-<label>
-  <strong>Bio:</strong>
-  <%= @user.bio %>
-</label><br>
+  div.labels{
+    position: relative;
+    top: 5vh;
+  }
+  .user_photo {
+    width: 15vw;
+    height: 15vh;
+    border-radius: 60%;
+    margin: 30px auto;
+  }
+  label {
+    margin: 5px;
+    font-size: 25px;
+  }
 
-<label>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</label><br>
+</style>
+<div class="user_detail">
 
-<label>
-  <strong>Wistlist:</strong>
-  <%= link_to @user.wishlist.name, wishlist_path(@user.wishlist.id) %>
-</label>
+  <h2>Details of users</h2>
+  <div class="user_links">
+
+    <% if @current_user.present? && @current_user.admin? %>
+      <%= link_to 'A list of all users', users_path, class: 'links' %>
+    <% end %>
+    <br>
+
+    <%= link_to 'Change Profile', edit_user_path(@user.id), class: 'links' %>
+    |
+    <%= link_to 'Delete your account', user_path(@user.id), method: 'delete', class: 'links'   %><br>
+  </div>
+
+  <div class="user_photo">
+
+    <% if @user.image.present? %>
+      <%= image_tag @user.image.image, alt: @user.name, class: 'user_photo' %>
+    <% end %>
+  </div>
+
+  <div class="labels">
+
+    <label>
+      <strong>Name:</strong>
+      <%= @user.name%>
+    </label><br>
+
+    <label>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </label><br>
+
+
+
+    <label>
+      <strong>Bio:</strong>
+      <%= @user.bio %>
+    </label><br>
+
+    <label>
+      <strong>Admin:</strong>
+      <%= @user.admin %>
+    </label><br>
+
+    <label>
+      <% if @user.wishlist.present? %>
+      <strong>Wistlist:</strong>
+      <%= link_to @user.wishlist.name, wishlist_path(@user.wishlist.id), class: 'links' %>
+      <% end %>
+    </label>
+  </div>
+</div>

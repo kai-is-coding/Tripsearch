@@ -37,11 +37,19 @@
 <%= form_tag add_wishlist_country_path(@country.id) do %>
   <%= submit_tag 'Save to Wishlist'%>
 <% end %>
+
 <% if flash[:notice] %>
   <div class="notice">
     <%= flash[:notice] %>
   </div>
 <% end %>
+
+  <% if @current_user.present? && @current_user.admin? %>
+  <%= link_to 'Edit', edit_country_path(@country.id) %>
+  |
+  <%= link_to 'Delete', country_path(@country.id), method: 'delete' , id: 'delete'%>
+
+  <% end %>
 
 <label id="name">
   <strong>Name:</strong>

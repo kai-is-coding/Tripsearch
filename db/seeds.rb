@@ -119,11 +119,12 @@ i33 = Image.create! name: 'Montreal', image: 'https://images.pexels.com/photos/2
 i34 = Image.create! name: 'Montreal', image: 'https://images.pexels.com/photos/1159708/pexels-photo-1159708.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', city_id: ct6.id
 i35 = Image.create! name: 'Zürich', image: 'https://as1.ftcdn.net/jpg/01/85/10/72/500_F_185107235_1myJcez1PSCquoSHUkHpsIa8KjM5QFuI.jpg', city_id: ct1.id
 i36 = Image.create! name: 'Zürich', image: 'https://as1.ftcdn.net/jpg/02/18/59/06/500_F_218590606_tYNxh3BM1bL02D196jGHOq2j8N0Pt0Vd.jpg', city_id: ct1.id
-i1 = Image.create! name: 'Switzerland', image: 'https://images.pexels.com/photos/922978/pexels-photo-922978.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c1.id
-i1 = Image.create! name: 'Switzerland', image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c1.id
-i1 = Image.create! name: 'Japan', image: 'https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c2.id
-i1 = Image.create! name: 'Japan', image: 'https://images.pexels.com/photos/46253/mt-fuji-sea-of-clouds-sunrise-46253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c2.id
-i1 = Image.create! name: 'Canada', image: 'https://images.pexels.com/photos/756790/pexels-photo-756790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c3.id
-i1 = Image.create! name: 'Canada', image: 'https://images.pexels.com/photos/158398/niagara-falls-waterfall-horseshoe-158398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c3.id
+i37 = Image.create! name: 'Switzerland', image: 'https://images.pexels.com/photos/922978/pexels-photo-922978.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c1.id
+i38 = Image.create! name: 'Switzerland', image: 'https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c1.id
+i39 = Image.create! name: 'Japan', image: 'https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c2.id
+i40 = Image.create! name: 'Japan', image: 'https://images.pexels.com/photos/46253/mt-fuji-sea-of-clouds-sunrise-46253.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c2.id
+i41 = Image.create! name: 'Canada', image: 'https://images.pexels.com/photos/756790/pexels-photo-756790.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c3.id
+i42 = Image.create! name: 'Canada', image: 'https://images.pexels.com/photos/158398/niagara-falls-waterfall-horseshoe-158398.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', country_id: c3.id
+i43 = Image.create! name: 'Josh', image: 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', user_id: u1.id
 
 puts "Created #{Image.count} images."

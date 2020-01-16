@@ -14,14 +14,29 @@ div.search {
   background-image: url("background.jpeg");
   background-size: cover;
 }
-h2 {
+div.list {
   position: relative;
-  top: 230px;
+  top: 1vh;
+  heigh: 30%;
+  width: 36%;
+  font-size: 12px;
+  left: 69vw;
+  color: white;
+}
+
+#countries, #countries:visited, #cities, #cities:visited, #attractions, #attractions:visited {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+h2.search_header {
+  position: relative;
+  top: 12vh;
 }
 div.searchArea {
   width: max-content;
   position: relative;
-  top: 200px;
+  top: 9vh;
   margin: 0px auto;
 }
 .searchSelection {

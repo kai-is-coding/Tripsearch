@@ -1,5 +1,62 @@
-<h2>Please register your account.</h2>
-<div class="register">
+<style media="screen">
+  div.create_new {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+    display: block;
+  }
 
-  <%= render partial: 'form' %>
+  div.register {
+    position: relative;
+    top: 28vh;
+  }
+
+  h2 {
+    position: relative;
+    top: 16vh;
+    font-size: 25px;
+  }
+</style>
+<div class="create_new">
+
+  <h2>Please register your account.</h2>
+  <div class="register">
+
+    <%# show messages if name already exists and password does not match %>
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |e| %>
+        <li>
+          <%= e %>
+        </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%# form for creating new users %>
+    <%= form_for @user do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+      <br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <br>
+
+      <%= f.label :password_confirmation, 'Confirm Password' %>
+      <%= f.password_field :password_confirmation %>
+      <br>
+
+
+      <%= f.submit 'Sign up' %>
+    <% end %>
+
+  </div>
 </div>

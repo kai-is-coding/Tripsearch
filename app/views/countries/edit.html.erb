@@ -1,0 +1,48 @@
+<style media="screen">
+  div.edit {
+    width: 99.5%;
+    height: 88.7%;
+    margin-top: 2px;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(96, 164, 8, 0.77);
+    display: block;
+  }
+
+  div.form {
+    position: relative;
+    top: 28vh;
+  }
+
+  h2 {
+    position: relative;
+    top: 16vh;
+    font-size: 25px;
+  }
+</style>
+<div class="edit">
+
+  <h2>Edit Country.</h2>
+  <div class="form">
+
+
+
+    <%# form for creating new users %>
+    <%= form_for @country do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <br>
+
+      <%# <%= form_tag add_image_country_path(@country.id) do %>
+      <%# <%= f.label :image %>
+      <%# <%= f.text_field :image %>
+      <%# <% end %>
+      <%= f.submit 'Update' %>
+    <% end %>
+
+  </div>
+</div>

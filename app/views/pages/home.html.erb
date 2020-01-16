@@ -1,11 +1,20 @@
 <div class="search">
 
-  <h2>Search Your Destinations</h2>
+  <div class="list">
+    <h2>List for all countries|cities|attractions </h2>
+    <%= link_to 'All countries', countries_path, id: 'countries' %><br>
+    ==================<br>
+    <%= link_to 'All cities', cities_path, id: 'cities' %><br>
+    ==================<br>
+    <%= link_to 'All attractions', attractions_path, id: 'attractions' %>
+  </div>
+
+  <h2 class="search_header">Search Your Destinations</h2>
     <%= form_with(url: countries_search_path, method: 'get', local: true, id: 'search_form') do %>
       <div class="searchArea">
         <strong>Search by:</strong>
         <%= select_tag(:search_id,   raw('<option value="1">Countries</  option><option value="2">Cities</  option><option   value="3">Attractions</option>'), class: 'searchSelection') %>
-        <%= text_field_tag :search_id, nil,   placeholder: 'e.g.   Australia',class: 'searchBar' %>
+        <%= text_field_tag :search_text, nil,   placeholder: 'e.g.   Australia',class: 'searchBar' %>
       <%= button_tag 'Search', class: 'searchButtom' %>
     </div>
     <% end %>

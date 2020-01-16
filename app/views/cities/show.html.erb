@@ -34,11 +34,22 @@
 <div class="city_details">
 
 <h2>Details of <%= @city.name %></h2>
+<%= form_tag add_wishlist_city_path(@city.id) do %>
+  <%= submit_tag 'Save to Wishlist'%>
+<% end %>
 
+<% if flash[:notice] %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
-<%= link_to 'Delete', city_path(@city.id), method: 'delete' , id: 'delete'%>
+  <% if @current_user.present? && @current_user.admin? %>
+  <%= link_to 'Edit', edit_city_path(@city.id) %>
+  |
+  <%= link_to 'Delete', city_path(@city.id), method: 'delete' , id: 'delete'%>
 
-
+  <% end %>
 <label id="name">
   <strong>Name:</strong>
   <%= @city.name %>
