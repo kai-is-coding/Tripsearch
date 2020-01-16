@@ -37,6 +37,11 @@ class CountriesController < ApplicationController
 
   def search
     @countries = Country.where('name ILIKE ?', "%#{params[:search_text]}%")
+
+    @countries.each do |c|
+      puts c.name
+    end
+
   end
 
 
