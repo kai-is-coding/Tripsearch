@@ -1,25 +1,17 @@
-# README
+# Name
+## Trip Search On Rails
+### 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Project Introduction
+## It was my first rails project. I created a web search website based on rails. A user can log in and search for a destination that they want to visit and save it in a wishlist. It has several different models with one_to_many, many_to_many associations. 
+# Code Explanation
 
-Things you may want to cover:
 
-* Ruby version
+# Roadmap
+## 
 
-* System dependencies
+# Authors and acknowledgment
+## I would like to thank Luke Hammer and Josh Parry who is helping me through the entire project.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# Tripsearch
+# License
+## Currently, no License. 
