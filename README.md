@@ -5,9 +5,16 @@ It is my first rails project. I created a web search website based on rails. A u
 
 ## Working Flow
 Step1: You can login with email: john@ga.co password: chicken . After the user login, the user can search destinations by countries, cities or attractions, and the user does not have to type the full name of that destination. 
-[image6](images/1.png)
-If the user only type ja in search area, it will match Japan in its database.
-[image6](images/2.png)
+![image1](images/1.png)
+If the user only type ja in search area, it will match Japan in its database. Also, google map shows marker of that destination.
+![image2](images/2.png)
+User can see details about Japan by clicking it.
+![image3](images/3.png)
+User also can save this place into their personal wishlist.
+![image4](images/4.png)
+Personal wishlist can be found in user profiles page.
+![image5](images/5.png)
+![image6](images/6.png)
 ## Code Explanation
 
 
