@@ -12,10 +12,13 @@ User can see details about Japan by clicking it.
 ![image3](images/3.png)
 User also can save this place into their personal wishlist.
 ![image4](images/4.png)
+
 Personal wishlist can be found in user profiles page.
+
 ![image5](images/5.png)
 ![image6](images/6.png)
 ## Code Explanation
+
 
 
 # Roadmap
