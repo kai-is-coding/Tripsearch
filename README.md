@@ -100,7 +100,7 @@ In `wishlists_controller`, three methods are responsible for adding destinations
 ```
 
 ## Roadmap
-For the future plan, I will use a external database to have more searching results.
+For the future plan, I will use an external API to have more searching results.
 
 ## Authors and acknowledgment
 I would like to thank Luke Hammer and Josh Parry who is helping me through the entire project.
